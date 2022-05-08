@@ -1,0 +1,59 @@
+2022-05-08 12:38:50.474  INFO 2958 --- [restartedMain] l.esofttopup.chatbot.ChatbotApplication  : Starting ChatbotApplication using Java 1.8.0_275 on Asankas-MacBook-Air.local with PID 2958 (/Users/anthonydonx/IdeaProjects/chatbot/target/classes started by anthonydonx in /Users/anthonydonx/IdeaProjects/chatbot)
+2022-05-08 12:38:50.479  INFO 2958 --- [restartedMain] l.esofttopup.chatbot.ChatbotApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-05-08 12:38:50.544  INFO 2958 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-08 12:38:50.544  INFO 2958 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-08 12:38:51.557  INFO 2958 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-08 12:38:51.574  INFO 2958 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2022-05-08 12:38:52.141  INFO 2958 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2022-05-08 12:38:52.148  INFO 2958 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-08 12:38:52.149  INFO 2958 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-08 12:38:52.220  INFO 2958 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-08 12:38:52.221  INFO 2958 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1676 ms
+2022-05-08 12:38:52.344  INFO 2958 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-08 12:38:52.494  INFO 2958 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-08 12:38:52.508  INFO 2958 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./botdata/chatbot'
+2022-05-08 12:38:53.032  INFO 2958 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-08 12:38:53.097  INFO 2958 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-08 12:38:53.291  INFO 2958 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-08 12:38:53.487  INFO 2958 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-05-08 12:38:54.068  INFO 2958 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-08 12:38:54.094  INFO 2958 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:38:54.590  WARN 2958 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-08 12:38:55.437  INFO 2958 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-08 12:38:55.443  INFO 2958 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2022-05-08 12:38:55.501  INFO 2958 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2022-05-08 12:38:55.523  INFO 2958 --- [restartedMain] l.esofttopup.chatbot.ChatbotApplication  : Started ChatbotApplication in 5.483 seconds (JVM running for 6.429)
+2022-05-08 12:38:55.946  INFO 2958 --- [RMI TCP Connection(7)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-08 12:38:55.948  INFO 2958 --- [RMI TCP Connection(7)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-08 12:38:55.951  INFO 2958 --- [RMI TCP Connection(7)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-05-08 12:41:54.444  INFO 2958 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:41:54.463  INFO 2958 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-08 12:41:54.468  INFO 2958 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-08 12:42:00.072  INFO 3002 --- [restartedMain] l.esofttopup.chatbot.ChatbotApplication  : Starting ChatbotApplication using Java 1.8.0_275 on Asankas-MacBook-Air.local with PID 3002 (/Users/anthonydonx/IdeaProjects/chatbot/target/classes started by anthonydonx in /Users/anthonydonx/IdeaProjects/chatbot)
+2022-05-08 12:42:00.074  INFO 3002 --- [restartedMain] l.esofttopup.chatbot.ChatbotApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-05-08 12:42:00.119  INFO 3002 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-08 12:42:00.120  INFO 3002 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-08 12:42:01.216  INFO 3002 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-08 12:42:01.237  INFO 3002 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2022-05-08 12:42:01.889  INFO 3002 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2022-05-08 12:42:01.902  INFO 3002 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-08 12:42:01.902  INFO 3002 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-08 12:42:01.982  INFO 3002 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-08 12:42:01.983  INFO 3002 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1863 ms
+2022-05-08 12:42:02.091  INFO 3002 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-08 12:42:02.188  INFO 3002 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-08 12:42:02.196  INFO 3002 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./botdata/chatbot'
+2022-05-08 12:42:02.522  INFO 3002 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-08 12:42:02.549  INFO 3002 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-08 12:42:02.639  INFO 3002 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-08 12:42:02.692  INFO 3002 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-05-08 12:42:02.861  INFO 3002 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-08 12:42:02.866  INFO 3002 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:42:02.971  WARN 3002 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-08 12:42:03.465  INFO 3002 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-08 12:42:03.472  INFO 3002 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2022-05-08 12:42:03.529  INFO 3002 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2022-05-08 12:42:03.550  INFO 3002 --- [restartedMain] l.esofttopup.chatbot.ChatbotApplication  : Started ChatbotApplication in 3.868 seconds (JVM running for 4.749)
+2022-05-08 12:42:03.770  INFO 3002 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-08 12:42:03.772  INFO 3002 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-08 12:42:03.777  INFO 3002 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
