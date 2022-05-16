@@ -1,0 +1,24 @@
+[{
+  "category": "GREETING",
+  "questions": [
+    "Hi",
+    "Hello",
+    "Are you there?"
+  ],
+  "answers": [
+    "How can i help you",
+    "Need any help?"
+  ]
+},
+{
+  "category": "EXIT",
+  "questions": [
+    "Bye",
+    "See you"
+  ],
+  "answers": [
+    "Have a nice day",
+    "See you too"
+  ]
+}
+  ]
