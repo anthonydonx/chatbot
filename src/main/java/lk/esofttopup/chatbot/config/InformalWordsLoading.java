@@ -30,8 +30,8 @@ public class InformalWordsLoading {
         List<HashMap> hashMaps = mapper.readValue(resource.getFile(), new TypeReference<List<HashMap>>() {
         });
         hashMaps.stream().forEach(hashMap -> {
-            String key=hashMap.get(INFORMALWORD).toString();
-            String val=hashMap.get(FORMALWORD).toString();
+            String key=hashMap.get(INFORMALWORD).toString().toLowerCase();
+            String val=hashMap.get(FORMALWORD).toString().toLowerCase();
          informalMap.put(key,val);
         });
        return informalMap;

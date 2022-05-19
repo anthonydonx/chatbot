@@ -1,16 +1,7 @@
 package lk.esofttopup.chatbot;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lk.esofttopup.chatbot.common.Category;
-import lk.esofttopup.chatbot.dataset.QuestionsDataSet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @SpringBootApplication
 public class ChatbotApplication {
@@ -19,7 +10,7 @@ public class ChatbotApplication {
 		SpringApplication.run(ChatbotApplication.class, args);
 	}
 //@PostConstruct
-	public void generateJSON() throws JsonProcessingException {
+	/*public void generateJSON() throws JsonProcessingException {
 	List<QuestionsDataSet> dataSets=new ArrayList<>();
 	for (int i = 0; i < 3; i++) {
 		QuestionsDataSet trainData=new QuestionsDataSet();
@@ -31,5 +22,5 @@ public class ChatbotApplication {
 
 		System.out.println(new ObjectMapper().writeValueAsString(dataSets));
 
-	}
+	}*/
 }

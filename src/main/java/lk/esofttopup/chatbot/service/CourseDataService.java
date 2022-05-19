@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 public class CourseDataService {
     private final FacultyRepository facultyRepository;
 
-    //@PostConstruct
+    @PostConstruct
     @Transactional
     void loadDataFromExcel() throws IOException, InvalidFormatException {
         Workbook workbook = CommonUtil.loadExcelFile("/data/Course_Details.xlsx");

@@ -18,7 +18,8 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CategoryData implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqGen")
+    @SequenceGenerator(name = "seqGen", sequenceName = "seq", initialValue = 1)
     private Long categoryId;
     private String categoryName;
     @OneToMany(cascade =CascadeType.ALL)

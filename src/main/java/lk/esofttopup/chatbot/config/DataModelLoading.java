@@ -21,6 +21,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ import java.util.stream.Collectors;
 @Configuration
 @AllArgsConstructor
 @Slf4j
+@Transactional
 public class DataModelLoading {
     private final CategoryRepository categoryRepository;
 
@@ -51,7 +53,7 @@ public class DataModelLoading {
 
             //Create document per each sentence
             dataListStr.stream().forEach(s -> {
-                documentSamples.add(new DocumentSample(categoryData.getCategoryName(),new String[]{s}));
+                documentSamples.add(new DocumentSample(categoryData.getCategoryName(),new String[]{s.toLowerCase()}));
             });
 
            // documentSamples.add(new DocumentSample(categoryData.getCategoryName(), dataListStr.stream().toArray(String[]::new)));

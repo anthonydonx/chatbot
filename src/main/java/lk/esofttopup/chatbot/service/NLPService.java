@@ -9,13 +9,16 @@ import java.util.List;
  * NLP features implementation
  */
 public interface NLPService {
-    List<String> detectSentence() throws IOException;
+    List<String> detectSentence(String inputText);
 
-    String[] tokenize(String paragraph) throws IOException;
+    String[] tokenize(String paragraph);
 
     void detectEntities() throws IOException;
 
     String[] posTag() throws IOException;
+
+    //@PostConstruct
+    String findCategory(String[] tokenize);
 
     //DoccatModel trainCategoryDataset() throws IOException;
 }
