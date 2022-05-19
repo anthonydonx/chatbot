@@ -97,4 +97,19 @@ public class OpenNLPServiceImpl implements NLPService {
 
 
     }
+    @Override
+    public String findCategory(String sentence){
+
+        DocumentCategorizerME categorizerME = new DocumentCategorizerME(dataModel);
+        for (int i = 0; i < categorizerME.getNumberOfCategories(); i++) {
+            log.info("Trained Categories : {}", categorizerME.getCategory(i));
+        }
+        double[] categorize = categorizerME.categorize(new String[]{sentence});
+        String bestCategory = categorizerME.getBestCategory(categorize);
+        log.info("All categories , {} ", categorizerME.getAllResults(categorize));
+        log.info("Best Category : {}", bestCategory);
+        return bestCategory;
+
+
+    }
 }

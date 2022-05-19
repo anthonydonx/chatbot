@@ -20,5 +20,7 @@ public interface NLPService {
     //@PostConstruct
     String findCategory(String[] tokenize);
 
+    String findCategory(String sentence);
+
     //DoccatModel trainCategoryDataset() throws IOException;
 }

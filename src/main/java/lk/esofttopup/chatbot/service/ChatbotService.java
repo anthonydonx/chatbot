@@ -26,11 +26,11 @@ public class ChatbotService {
     private final CategoryRepository categoryRepository;
 
     public ChatBotResponse buildResponse(UserInputRequest userInputRequest) {
-        List<ChatInput> chatInputList= userInputRequest.getChatInputs();
+        List<ChatInput> chatInputList = userInputRequest.getChatInputs();
         List<ChatBotAnswers> chatBotAnswersList = new ArrayList<>();
 
         // get last input string
-        String inputText = chatInputList.get(chatInputList.size()-1).getInputText();
+        String inputText = chatInputList.get(chatInputList.size() - 1).getInputText();
 
         // Separate sentences
         List<String> sentenceList = nlpService.detectSentence(inputText);
@@ -40,25 +40,52 @@ public class ChatbotService {
             for (int i = 0; i < tokenize.length; i++) {
                 if (informalDataMap.containsKey(tokenize[i])) { // informal word found,going to replace
                     tokenize[i] = informalDataMap.get(tokenize[i]).toLowerCase();
-                }else{
-                    tokenize[i]=tokenize[i].toLowerCase();
+                } else {
+                    tokenize[i] = tokenize[i].toLowerCase();
                 }
             }
             String category = nlpService.findCategory(tokenize);
-            if (category.equalsIgnoreCase(Category.greeting.name())) {
-                Optional<CategoryData> allByCategoryName = categoryRepository.findAllByCategoryName(category);
-                if (allByCategoryName.isPresent()) {
-                    List<Answer> answers = allByCategoryName.get().getAnswers();
-                    ChatBotAnswers chatBotAnswers = ChatBotAnswers.builder().type(ResponseType.TEXT).text(answers.get(CommonUtil.getRandomNumber(answers.size())).getAnswer()).build();
-                    chatBotAnswersList.add(chatBotAnswers);
-                } else {
-                    log.warn("Not define yet");
-                }
+            //String category = nlpService.findCategory(sentence);
 
+            // @Todo better to go with switch case
+            if (category.equalsIgnoreCase(Category.greeting.name())) {
+                // Get all relevant answers from database by identified category
+                List<Answer> answers = getFromDatasource(category);
+
+                // Build response with random answer from list
+                ChatBotAnswers chatBotAnswers = ChatBotAnswers.builder().type(ResponseType.TEXT).
+                        text(answers.get(CommonUtil.getRandomNumber(answers.size())).getAnswer()).build();
+                // add to the response list
+                chatBotAnswersList.add(chatBotAnswers);
+
+                //Online
+            } else if (category.equalsIgnoreCase(Category.online.name())) {
+                List<Answer> answers = getFromDatasource(Category.online.name());
+                ChatBotAnswers chatBotAnswers = ChatBotAnswers.builder().type(ResponseType.TEXT).
+                        text(answers.get(CommonUtil.getRandomNumber(answers.size())).getAnswer()).build();
+                // add to the response list
+                chatBotAnswersList.add(chatBotAnswers);
+            }
+            else if(category.equalsIgnoreCase(Category.apply_for_student_loan.name())){
+                List<Answer> answers = getFromDatasource(Category.apply_for_student_loan.name());
+                ChatBotAnswers chatBotAnswers = ChatBotAnswers.builder().type(ResponseType.TEXT).
+                        text(answers.get(CommonUtil.getRandomNumber(answers.size())).getAnswer()).build();
+                // add to the response list
+                chatBotAnswersList.add(chatBotAnswers);
             }
         });
 
         return ChatBotResponse.builder().answers(chatBotAnswersList).build();
 
+    }
+
+    private List<Answer> getFromDatasource(String category) {
+        Optional<CategoryData> allByCategoryName = categoryRepository.findAllByCategoryName(category);
+        if (allByCategoryName.isPresent()) {
+            // get all list of answers
+            return allByCategoryName.get().getAnswers();
+
+        }
+        return new ArrayList<>();
     }
 }
