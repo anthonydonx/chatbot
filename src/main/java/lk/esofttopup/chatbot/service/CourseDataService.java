@@ -16,7 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,7 +34,8 @@ public class CourseDataService {
     @PostConstruct
     @Transactional
     void loadDataFromExcel() throws IOException, InvalidFormatException {
-        Workbook workbook = CommonUtil.loadExcelFile("/data/Course_Details.xlsx");
+        InputStream resource = getClass().getResourceAsStream(File.separator+"data"+File.separator+"Course_Details.xlsx");
+        Workbook workbook = CommonUtil.loadExcelFile(resource);
         Sheet sheet = workbook.getSheetAt(0);
 
         Map<String, List<String>> facultyCourseMap = new HashMap<>();

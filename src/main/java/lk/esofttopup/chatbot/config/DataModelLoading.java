@@ -23,7 +23,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -74,7 +76,8 @@ public class DataModelLoading {
     }
 
     public void loadDataFromExcel() throws IOException, InvalidFormatException {
-        Workbook workbook = CommonUtil.loadExcelFile("/data/init_data.xlsx");
+        InputStream resource = getClass().getResourceAsStream(File.separator+"data"+File.separator+"init_data.xlsx");
+        Workbook workbook = CommonUtil.loadExcelFile(resource);
         Sheet sheet = workbook.getSheetAt(0);
         Map<String, List<Question>> quListMap = new HashMap<>();
         Map<String, List<Answer>> ansListMap = new HashMap<>();

@@ -9,4 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ChatInput {
     String inputText;
+    String facultyId;
+    String courseId;
 }

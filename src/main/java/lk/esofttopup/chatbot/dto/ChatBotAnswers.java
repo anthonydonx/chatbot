@@ -13,4 +13,7 @@ import lombok.NoArgsConstructor;
 public class ChatBotAnswers {
     private ResponseType type;
     private String text;
+    private String listType;
+    private String inputId;
+    private String commonText;
 }

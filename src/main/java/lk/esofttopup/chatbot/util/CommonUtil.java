@@ -9,6 +9,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Random;
 
 @Component
@@ -21,9 +22,9 @@ public class CommonUtil {
 
     }
 
-    public static Workbook loadExcelFile(String fileLocation) throws IOException, InvalidFormatException {
-        Resource resource = new ClassPathResource(fileLocation);
-        Workbook workbook = new XSSFWorkbook(resource.getFile());
+    public static Workbook loadExcelFile(InputStream fileLocation) throws IOException, InvalidFormatException {
+        //Resource resource = new ClassPathResource(fileLocation);
+        Workbook workbook = new XSSFWorkbook(fileLocation);
         return workbook;
     }
 
